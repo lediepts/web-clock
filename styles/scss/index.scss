@@ -19,12 +19,21 @@ html {
   font-size: 10px;
 }
 body {
-  background: #080808;
+  background: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
+  animation: rotate-root 5s linear;
+  @keyframes rotate-root {
+    0% {
+      filter: opacity(0);
+    }
+    100% {
+      filter: opacity(1);
+    }
+  }
 }
 .container {
   position: absolute;
@@ -41,23 +50,23 @@ body {
     transform: translate(-100%, -50%) rotate(calc(90deg * var(--i)));
     animation: rotate-color 12s linear infinite;
     &:nth-child(1) {
-      background-color: #00ff3cbb;
+      background-color: #00ff3c99;
     }
     &:nth-child(2) {
-      background-color: #f700ffbb;
+      background-color: #f700ff99;
     }
     &:nth-child(3) {
-      background-color: #ffae00bb;
+      background-color: #ffae0099;
     }
     &:nth-child(4) {
-      background-color: #ff0000bb;
+      background-color: #ff000099;
     }
     @keyframes rotate-color {
       0% {
-        filter: hue-rotate(0deg) blur(80px);
+        filter: hue-rotate(0deg) blur(100px) brightness(100%);
       }
       100% {
-        filter: hue-rotate(360deg) blur(80px);
+        filter: hue-rotate(360deg) blur(100px) brightness(200%);
       }
     }
   }
@@ -73,9 +82,11 @@ body {
   max-width: 500px;
   max-height: 500px;
   border-radius: 50%;
-  background: rgba(10, 37, 54, 0.281);
+  background: rgba(76, 121, 96, 0.2);
+  border: 1px solid rgba(232, 255, 255, 0.226);
   box-shadow: 0 -1.5rem 1.5rem rgba(255, 255, 255, 0.05), inset 0 -1.5rem 1.5rem rgba(255, 255, 255, 0.05),
-    0 1.5rem 1.5rem rgba(0, 0, 0, 0.3), inset 0 1.5rem 1.5rem rgba(49, 49, 49, 0.3);
+    0 1.5rem 1.5rem rgba(0, 0, 0, 0.3), inset 0 2rem 3rem rgba(49, 49, 49, 0.3);
+  animation: rotate-2 60s linear infinite;
   .num {
     position: absolute;
     top: 50%;
@@ -84,29 +95,29 @@ body {
     display: block;
     height: 100%;
     transform: translate(-50%, -50%) rotate(calc(30deg * var(--i))) scale(0.9);
+    font-size: 2.5rem;
     & > span {
       color: #ff5252;
       font-weight: bold;
       display: block;
       transform: rotate(calc(-30deg * var(--i)));
-      text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.3);
       animation: rotate-2 60s linear infinite;
-      text-shadow: 0 0.1rem 0 rgb(255, 255, 255), 0 0.2rem 0 #ffffff, 0 0.5rem 0.2rem rgba(255, 255, 255, 0.438);
+      text-shadow: 0 0.1rem 0 rgb(49, 0, 0), 0 0.2rem 0 rgb(102, 0, 0);
     }
 
     @keyframes rotate-2 {
       0% {
-        filter: hue-rotate(calc(30deg * var(--i)));
+        filter: brightness(150%) hue-rotate(calc(30deg * var(--i)));
       }
       100% {
-        filter: hue-rotate(calc(360deg * var(--i)));
+        filter: brightness(150%) hue-rotate(calc(360deg * var(--i)));
       }
     }
     &:nth-child(3),
     &:nth-child(6),
     &:nth-child(9),
     &:nth-child(12) {
-      font-size: 5rem;
+      font-size: 5rem !important;
     }
     &:nth-child(3) {
       margin: 0 2rem;
