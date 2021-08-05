@@ -1,0 +1,11 @@
+{
+  "name": "web-clock",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "https://github.com/lediepts/web-clock.git",
+  "author": "diep <diep.le@0004s.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "sass --watch styles/scss/:styles/"
+  }
+}
