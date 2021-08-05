@@ -25,7 +25,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  animation: rotate-root 5s linear;
+  animation: rotate-root 3s linear;
   @keyframes rotate-root {
     0% {
       filter: opacity(0);
@@ -43,12 +43,13 @@ body {
     top: 0;
     left: 0;
     display: block;
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     transform-origin: 100%;
     transform: translate(-100%, -50%) rotate(calc(90deg * var(--i)));
     animation: rotate-color 12s linear infinite;
+    opacity: 0.5;
     &:nth-child(1) {
       background-color: #00ff3c99;
     }
@@ -63,10 +64,10 @@ body {
     }
     @keyframes rotate-color {
       0% {
-        filter: hue-rotate(0deg) blur(100px) brightness(100%);
+        filter: hue-rotate(0deg) blur(60px);
       }
       100% {
-        filter: hue-rotate(360deg) blur(100px) brightness(200%);
+        filter: hue-rotate(360deg) blur(60px);
       }
     }
   }
@@ -82,12 +83,13 @@ body {
   max-width: 500px;
   max-height: 500px;
   border-radius: 50%;
-  background: rgba(76, 121, 96, 0.2);
+  background: rgba(161, 84, 179, 0.25);
   border: 1px solid rgba(232, 255, 255, 0.226);
   box-shadow: 0 -1.5rem 1.5rem rgba(255, 255, 255, 0.05), inset 0 -1.5rem 1.5rem rgba(255, 255, 255, 0.05),
-    0 1.5rem 1.5rem rgba(0, 0, 0, 0.3), inset 0 2rem 3rem rgba(49, 49, 49, 0.3);
+    0 1.5rem 1.5rem rgba(0, 0, 0, 0.3), inset 0 2rem 3rem rgba(49, 49, 49, 0.3), 0 0 7rem rgba(255, 255, 255, 0.2);
   animation: rotate-2 60s linear infinite;
   .num {
+    pointer-events: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -101,7 +103,7 @@ body {
       font-weight: bold;
       display: block;
       transform: rotate(calc(-30deg * var(--i)));
-      animation: rotate-2 60s linear infinite;
+      animation: rotate-2 360s linear infinite;
       text-shadow: 0 0.1rem 0 rgb(49, 0, 0), 0 0.2rem 0 rgb(102, 0, 0);
     }
 
@@ -145,9 +147,43 @@ body {
 }
 .main-clock {
   position: absolute;
+  & > p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    width: 90vw;
+    height: 90vw;
+    max-width: 500px;
+    max-height: 500px;
+
+    text-shadow: 0 2px 0.1rem rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    & > i {
+      font-size: 3rem;
+      margin-bottom: 5rem;
+      color: rgb(255, 220, 220);
+      text-shadow: 0 0 1rem white, 0 0 2rem white, 0 0 5rem white;
+      background: transparent;
+      animation: rotate-1 6s linear infinite;
+    }
+    & > a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      background: -webkit-linear-gradient(#111111 0%, rgb(255, 254, 174) 50%, rgb(255, 217, 168) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      font-style: italic;
+      animation: rotate-1 6s linear infinite;
+    }
+  }
   & > div {
     transform: translate(-50%, -50%);
     position: absolute;
+    pointer-events: none;
     & > div {
       display: flex;
       justify-content: center;
