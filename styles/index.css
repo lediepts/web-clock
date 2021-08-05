@@ -156,7 +156,7 @@ body {
   justify-content: space-around;
   position: absolute;
   width: 90vw;
-  height: 90vw;
+  height: 60vw;
   max-width: 500px;
   max-height: 500px;
   text-shadow: 0 2px 0.1rem rgba(0, 0, 0, 0.3);
