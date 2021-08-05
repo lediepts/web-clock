@@ -27,6 +27,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   animation: rotate-root 3s linear;
 }
 @keyframes rotate-root {
